@@ -15,7 +15,7 @@ To install the module, use npm:
 
 ```bash
 
-npm install git+ssh://git@github.com:DJ-DJL/config.git
+npm install @djleehaha/config
 
 ```
 ## Usage
@@ -109,7 +109,3 @@ Directly uses the following npm modules:
 * [jsonc](https://www.npmjs.com/package/jsonc)
 * [smol-toml](https://www.npmjs.com/package/smol-toml)
 * [yaml](https://www.npmjs.com/package/yaml)
-
-## Contact
-
-For questions or feedback, please reach out to your-email@example.com.
