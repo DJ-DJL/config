@@ -1,3 +1,4 @@
+import Path from 'node:path';
 import FS from 'node:fs';
 import Path from 'path';
 import JSONC from 'jsonc'
@@ -10,6 +11,16 @@ import INI from 'ini';
 if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(main(process.argv));
 }
+
+export enum Format {
+    jsonc,
+    json5,
+    hjson,
+    toml,
+    yaml,
+    ini,
+}
+
 
 export function main(argv: string[]) {
     if (argv.length < 3) {
@@ -48,7 +59,7 @@ N.B. to be parsed correctly one of the above file extensions must be used!`);
     return 0;
 }
 
-export default function parse(format: string, configContent: string): any {
+export function parse(format: Format, configContent: string): any {
     switch (format) {
         case 'json':
             return JSON.parse(configContent);
@@ -66,5 +77,27 @@ export default function parse(format: string, configContent: string): any {
             return INI.parse(configContent);
         default:
             throw new Error(`Unsupported format ${format}`);
+    }
+}
+
+export function loadConfig(files: { [key: string]: Format }): any {
+    for (const [filename, format] of Object.entries(files)) {
+        if (FS.existsSync(filename)) {
+            try {
+                return parse(format, FS.readFileSync(filename, 'utf8'));
+            } catch (ex) {
+                throw new Error(`Unable to parse ${filename} as ${format}: ${(ex as Error).message}`);
+            }
+        }
+    }
+    throw new Error(`No config files found`);
+}
+
+
+export async function loadConfigAsync(files: { [key: string]: Format }): Promise<any> {
+    for (const [filename, format] of Object.entries(files)) {
+        if (FS.existsSync(filename)) {
+            return parse(format, await FS.promises.readFile(filename, 'utf8'));
+        }
     }
 }

@@ -1,6 +1,6 @@
 import FS from 'node:fs';
 import Path from 'path';
-import parse, { main } from './index.js';
+import { main, parse } from './index.js';
 
 // console.log('\x1B[90msame\x1B[0m', diffObjects({ "hello": "world" }, { "hello": "world" }));
 // console.log('\x1B[90mwrong key\x1B[0m', diffObjects({ "hello": "world" }, { "hola": "world" }));
