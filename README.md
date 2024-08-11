@@ -39,8 +39,8 @@ Description: Parses the content as the given format
 
 Parameters:
 
-    format (string): One of the supported file format.
-    content (string): Content of the config (not the filename)
+* format (string): One of the supported file format.
+* content (string): Content of the config (not the filename)
 
 Returns: Parsed content of the supplied config
 
@@ -56,7 +56,7 @@ Description: Checks if any of the files in the files object exist and attempts t
 
 Parameters:
 
-    files (object): An object, the keys of which are filenames (optionally including paths) to check for. The value is the format to parse the file as.
+* files (object): An object, the keys of which are filenames (optionally including paths) to check for. The value is the format to parse the file as.
 
 Returns: Parsed content of config file if found.
 
@@ -74,7 +74,7 @@ Description: Checks if any of the files in the files object exist and attempts t
 
 Parameters:
 
-    files (object): An object, the keys of which are filenames (optionally including paths) to check for. The value is the format to parse the file as.
+* files (object): An object, the keys of which are filenames (optionally including paths) to check for. The value is the format to parse the file as.
 
 Returns: Promise: Parsed content of config file if found.
 
