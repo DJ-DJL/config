@@ -1,0 +1,18 @@
+this: is
+a:
+  - json
+  - test
+file:
+null: null
+complex:
+  obj: with
+  sub:
+    objects: and
+    things:
+      - and
+  stuff:
+    - and
+    - the
+  same: key at multiple levels, just to mess with ini
+  Array:
+    - containing: objects
