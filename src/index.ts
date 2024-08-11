@@ -1,6 +1,5 @@
 import Path from 'node:path';
 import FS from 'node:fs';
-import Path from 'path';
 import JSONC from 'jsonc'
 import JSON5 from 'json5'
 import HJSON from 'hjson';
