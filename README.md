@@ -15,7 +15,7 @@ To install the module, use npm:
 
 ```bash
 
-npm install github.com:DJ-DJL/config.git
+npm install git+ssh://git@github.com:DJ-DJL/config.git
 
 ```
 ## Usage
