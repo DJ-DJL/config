@@ -33,52 +33,52 @@ const config = Config.loadConfig({
 ```
 ## API
 
-`Config.parse(format, content)`
+### `Config.parse(format, content)`
 
-Description: Parses the content as the given format
+Parses the content as the given format
 
-Parameters:
+#### Parameters:
 
 * format (string): One of the supported file format.
 * content (string): Content of the config (not the filename)
 
 Returns: Parsed content of the supplied config
 
-Example:
+#### Example:
 
 ```javascript
 const config = Config.parse('json', `{"some": "json"}`);
 ```
 
-`Config.loadConfig(files)`
+### `Config.loadConfig(files)`
 
-Description: Checks if any of the files in the files object exist and attempts to load them in the corresponding format
+Checks if any of the files in the files object exist and attempts to load them in the corresponding format
 
-Parameters:
+#### Parameters:
 
 * files (object): An object, the keys of which are filenames (optionally including paths) to check for. The value is the format to parse the file as.
 
 Returns: Parsed content of config file if found.
 
-Example:
+#### Example:
 
 ```javascript
 const config = Config.loadConfig({ "config.json": "json", "config.yaml": "yaml"});
 ```
 
 
-`Config.loadConfigAsync(files)`
+### `Config.loadConfigAsync(files)`
 
-Description: Checks if any of the files in the files object exist and attempts to load them in the corresponding format
+Checks if any of the files in the files object exist and attempts to load them in the corresponding format.
 
 
-Parameters:
+#### Parameters:
 
 * files (object): An object, the keys of which are filenames (optionally including paths) to check for. The value is the format to parse the file as.
 
 Returns: Promise: Parsed content of config file if found.
 
-Example:
+#### Example:
 
 ```javascript
 const config = await Config.loadConfigAsync({ "config.json": "json", "config.yaml": "yaml"});
@@ -86,13 +86,7 @@ const config = await Config.loadConfigAsync({ "config.json": "json", "config.yam
 
 ## Contributing
 
-If you’d like to contribute to the project, please follow these steps:
-
-    Fork the repository.
-    Create a new branch (git checkout -b feature/your-feature).
-    Commit your changes (git commit -am 'Add new feature').
-    Push to the branch (git push origin feature/your-feature).
-    Create a new Pull Request.
+If you think there is another format that this module support, please do create a pull request
 
 ## License
 
